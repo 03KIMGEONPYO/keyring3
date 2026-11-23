@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#FFFDF5"/>
+  <rect x="70" y="72" width="190" height="34" rx="17" fill="#FFD43B"/>
+  <text x="165" y="94" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#4A3B2C">MEMBERSHIP TIER</text>
+  <text x="70" y="164" font-family="sans-serif" font-size="44" font-weight="800" fill="#222222">4단계 회원 등급별</text>
+  <text x="70" y="220" font-family="sans-serif" font-size="44" font-weight="800" fill="#222222">1% · 3% · 5% · 7% 적립</text>
+  <text x="70" y="276" font-family="sans-serif" font-size="22" fill="#666666">구매할수록 커지는 keyring 멤버십 리워드 혜택을 만나보세요</text>
+  <g transform="translate(760, 125)" font-family="sans-serif" font-weight="800" text-anchor="middle">
+    <rect x="0" y="50" width="82" height="120" rx="14" fill="#FFF9DB" stroke="#FFD43B" stroke-width="4"/>
+    <text x="41" y="102" font-size="14" fill="#666666">WELCOME</text>
+    <text x="41" y="136" font-size="22" fill="#222222">1%</text>
+
+    <rect x="96" y="34" width="82" height="136" rx="14" fill="#FFF3BF" stroke="#FFD43B" stroke-width="4"/>
+    <text x="137" y="92" font-size="14" fill="#666666">SILVER</text>
+    <text x="137" y="128" font-size="22" fill="#222222">3%</text>
+
+    <rect x="192" y="18" width="82" height="152" rx="14" fill="#FFE066" stroke="#FCC419" stroke-width="4"/>
+    <text x="233" y="82" font-size="14" fill="#4A3B2C">GOLD</text>
+    <text x="233" y="120" font-size="22" fill="#222222">5%</text>
+
+    <rect x="288" y="0" width="82" height="170" rx="14" fill="#FFD43B" stroke="#4A3B2C" stroke-width="4"/>
+    <text x="329" y="72" font-size="15" fill="#4A3B2C">VIP</text>
+    <text x="329" y="114" font-size="24" fill="#222222">7%</text>
+  </g>
+</svg>

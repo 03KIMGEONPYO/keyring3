@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#FFFFFF"/>
+  <rect x="24" y="24" width="1152" height="372" rx="28" fill="#FFFDF2" stroke="#FFE066" stroke-width="4"/>
+  <rect x="76" y="74" width="185" height="34" rx="17" fill="#FFD43B"/>
+  <text x="168" y="96" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#4A3B2C">WELCOME BENEFIT</text>
+  <text x="76" y="166" font-family="sans-serif" font-size="44" font-weight="800" fill="#222222">회원가입만 해도</text>
+  <text x="76" y="224" font-family="sans-serif" font-size="46" font-weight="800" fill="#E67700">3,000P 즉시 적립!</text>
+  <text x="76" y="280" font-family="sans-serif" font-size="22" fill="#666666">첫 구매부터 바로 사용할 수 있는 웰컴 포인트를 드립니다</text>
+  <g transform="translate(840, 85)">
+    <rect x="40" y="95" width="160" height="130" rx="18" fill="#FFD43B" stroke="#4A3B2C" stroke-width="5"/>
+    <rect x="28" y="65" width="184" height="36" rx="12" fill="#FFE066" stroke="#4A3B2C" stroke-width="5"/>
+    <rect x="106" y="65" width="28" height="160" fill="#FFFFFF" stroke="#4A3B2C" stroke-width="4"/>
+    <circle cx="96" cy="48" r="20" fill="none" stroke="#4A3B2C" stroke-width="5"/>
+    <circle cx="144" cy="48" r="20" fill="none" stroke="#4A3B2C" stroke-width="5"/>
+    <text x="120" y="175" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="900" fill="#4A3B2C">3,000P</text>
+  </g>
+</svg>

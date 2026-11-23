@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>keyring | 키링 전문 온라인 스토어</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 상단 헤더 & 내비게이션 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo" id="logoBtn">
+        <span class="logo-badge">🔑</span>
+        <span class="logo-text">keyring</span>
+      </a>
+
+      <nav class="main-nav" aria-label="상품 카테고리 메뉴">
+        <button type="button" class="nav-link active" data-category="전체">전체상품</button>
+        <button type="button" class="nav-link" data-category="인형/모루">인형/모루</button>
+        <button type="button" class="nav-link" data-category="아크릴">아크릴</button>
+        <button type="button" class="nav-link" data-category="비즈/스트랩">비즈/스트랩</button>
+      </nav>
+
+      <div class="user-actions">
+        <button type="button" class="icon-btn" id="openCartBtn">
+          장바구니 <span class="badge" id="cartCount">0</span>
+        </button>
+        <button type="button" class="icon-btn" id="openMyPageBtn">마이페이지</button>
+        <button type="button" class="primary-sm-btn" id="openAuthBtn">로그인</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main id="top" class="site-main">
+    <!-- 4장 교차 배너 슬라이드 섹션 -->
+    <section class="hero-section" aria-label="메인 프로모션 배너">
+      <div class="slider-wrapper">
+        <div class="slides" id="heroSlides">
+          <div class="slide active">
+            <img src="img/slide1.svg" alt="버터 베어와 크림 버니 신상 키링 컬렉션" />
+          </div>
+          <div class="slide">
+            <img src="img/slide2.svg" alt="신규 회원가입 시 3,000P 즉시 지급 혜택" />
+          </div>
+          <div class="slide">
+            <img src="img/slide3.svg" alt="가방과 에어팟에 어울리는 아크릴·비즈 스트랩" />
+          </div>
+          <div class="slide">
+            <img src="img/slide4.svg" alt="회원 등급별 최대 7% 포인트 적립 안내" />
+          </div>
+        </div>
+
+        <button type="button" class="slider-arrow prev" id="prevSlideBtn" aria-label="이전 배너">‹</button>
+        <button type="button" class="slider-arrow next" id="nextSlideBtn" aria-label="다음 배너">›</button>
+
+        <div class="slider-dots" id="sliderDots">
+          <button type="button" class="dot active" data-index="0" aria-label="1번 배너"></button>
+          <button type="button" class="dot" data-index="1" aria-label="2번 배너"></button>
+          <button type="button" class="dot" data-index="2" aria-label="3번 배너"></button>
+          <button type="button" class="dot" data-index="3" aria-label="4번 배너"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 상품 검색 & 분류 필터 & 상품 목록 섹션 -->
+    <section class="catalog-section" aria-label="상품 목록">
+      <div class="catalog-header">
+        <div>
+          <h1 class="section-title">KEYRING COLLECTION</h1>
+          <p class="section-subtitle">일상에 귀여움을 더하는 핸드메이드 &amp; 디자인 키링</p>
+        </div>
+
+        <form class="search-box" id="searchForm">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="찾으시는 키링을 검색해 보세요"
+            aria-label="상품 검색"
+          />
+          <button type="submit">검색</button>
+        </form>
+      </div>
+
+      <div class="filter-bar" id="filterBar">
+        <button type="button" class="filter-chip active" data-category="전체">전체 (8)</button>
+        <button type="button" class="filter-chip" data-category="인형/모루">인형/모루</button>
+        <button type="button" class="filter-chip" data-category="아크릴">아크릴</button>
+        <button type="button" class="filter-chip" data-category="비즈/스트랩">비즈/스트랩</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-message hidden" id="emptyProductMsg">검색 조건에 맞는 키링이 없습니다.</p>
+    </section>
+  </main>
+
+  <!-- 하단 푸터 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">keyring</p>
+      <p class="footer-info">고객센터 1588-0000 | 평일 10:00 - 17:00 (점심시간 12:00 - 13:00)</p>
+      <p class="footer-copy">© 2026 keyring. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 모달 1: 상품 상세 -->
+  <div class="modal-backdrop hidden" id="productModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="modal-card modal-detail">
+      <button type="button" class="modal-close" data-close="productModal" aria-label="닫기">×</button>
+      <div class="detail-body" id="productDetailBody"></div>
+    </div>
+  </div>
+
+  <!-- 모달 2: 장바구니 & 체험 결제 -->
+  <div class="modal-backdrop hidden" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal-card modal-wide">
+      <button type="button" class="modal-close" data-close="cartModal" aria-label="닫기">×</button>
+      <h2 class="modal-title" id="cartTitle">장바구니</h2>
+      <div id="cartContent"></div>
+    </div>
+  </div>
+
+  <!-- 모달 3: 회원가입 / 로그인 -->
+  <div class="modal-backdrop hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-card modal-narrow">
+      <button type="button" class="modal-close" data-close="authModal" aria-label="닫기">×</button>
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-tab="login">로그인</button>
+        <button type="button" class="auth-tab" data-tab="signup">회원가입 (3,000P)</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <h2 class="modal-title" id="authTitle">로그인</h2>
+        <label class="form-label">
+          아이디
+          <input type="text" id="loginId" required placeholder="아이디 입력" />
+        </label>
+        <label class="form-label">
+          비밀번호
+          <input type="password" id="loginPw" required placeholder="비밀번호 입력" />
+        </label>
+        <button type="submit" class="primary-full-btn">로그인하기</button>
+      </form>
+
+      <form id="signupForm" class="auth-form hidden">
+        <h2 class="modal-title">회원가입</h2>
+        <p class="benefit-banner">가입 즉시 <strong>3,000P</strong>가 자동 적립됩니다!</p>
+        <label class="form-label">
+          이름 (닉네임)
+          <input type="text" id="signupName" required placeholder="예: 김하늘" />
+        </label>
+        <label class="form-label">
+          아이디
+          <input type="text" id="signupId" required placeholder="영문/숫자 아이디" />
+        </label>
+        <label class="form-label">
+          비밀번호
+          <input type="password" id="signupPw" required placeholder="비밀번호 입력" />
+        </label>
+        <button type="submit" class="primary-full-btn">가입하고 3,000P 받기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 모달 4: 마이페이지 -->
+  <div class="modal-backdrop hidden" id="myPageModal" role="dialog" aria-modal="true" aria-labelledby="myPageTitle">
+    <div class="modal-card modal-wide">
+      <button type="button" class="modal-close" data-close="myPageModal" aria-label="닫기">×</button>
+      <h2 class="modal-title" id="myPageTitle">마이페이지</h2>
+      <div id="myPageContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
